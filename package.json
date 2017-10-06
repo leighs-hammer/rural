@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/leighs-hammer/country.git"
+    "url": "git+ssh://git@github.com/leighs-hammer/rural.git"
   },
   "author": "Leigh Brendon Barnes",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/leighs-hammer/country/issues"
+    "url": "https://github.com/leighs-hammer/rural/issues"
   },
-  "homepage": "https://github.com/leighs-hammer/country#readme"
+  "homepage": "https://github.com/leighs-hammer/rural#readme"
 }
