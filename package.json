@@ -1,0 +1,19 @@
+{
+  "name": "country",
+  "version": "0.1.0",
+  "description": "A simple helper for normalizing and returning ISO standard details for country information. ",
+  "main": " ",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/leighs-hammer/country.git"
+  },
+  "author": "Leigh Brendon Barnes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leighs-hammer/country/issues"
+  },
+  "homepage": "https://github.com/leighs-hammer/country#readme"
+}
