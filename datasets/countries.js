@@ -197,7 +197,7 @@ const countries = {
 	"DE": "Germany",
 	"YE": "Yemen",
 	"DZ": "Algeria",
-	"US": "United States",
+	"US": "United States of America",
 	"UY": "Uruguay",
 	"YT": "Mayotte",
 	"UM": "United States Minor Outlying Islands",

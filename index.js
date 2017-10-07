@@ -1,7 +1,7 @@
 /**
  * DataSets
  */
-
+import countries from './datasets/countries.js';
 import countries_iso from './datasets/countries_iso.js';
 
 /**
@@ -66,7 +66,19 @@ export { Iso as ruralIso };
  */
 
 export function Name(code,options,debug){
+	// Catch lowercase
+	var upperCode = code.toUpperCase();
 
+	if(upperCode.length === 2) {
+		return countries[`${upperCode}`]
+		// return
+	} else if (upperCode.length === 3) {
+		var lcode = Iso(upperCode, null, null)
+		// return
+		return countries[`${lcode}`]
+	} else {
+		console.error('A valid ISO Alpha 2 or Alpha 3 code is required to look up country name');
+	}
 	// Remove on production
 	// Logs out the params if the debug is passed
 	if(debug !== undefined && debug === true) {
