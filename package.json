@@ -1,7 +1,7 @@
 {
   "name": "rural",
-  "version": "0.1.2",
-  "description": "A simple helper for normalizing and returning ISO standard details for country information. ",
+  "version": "0.1.3",
+  "description": "A simple helper module / funtions set for normalizing and returning ISO standard details for country information. and referencing country data in a combined format directly in your app, with out the need for external requests and latency. ",
   "main": " ",
   "scripts": {
     "test": "test"
