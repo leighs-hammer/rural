@@ -250,3 +250,4 @@ const currencies = {
 	"QA": "QAR",
 	"MZ": "MZN"
 	}
+	export default currencies;

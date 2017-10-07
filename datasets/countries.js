@@ -250,3 +250,4 @@ const countries = {
 	"QA": "Qatar",
 	"MZ": "Mozambique"
 	}
+	export default countries;
