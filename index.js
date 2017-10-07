@@ -1,4 +1,9 @@
 /**
+ * Modules
+ */
+import {map} from 'lodash';
+
+/**
  * DataSets
  */
 import countries from './datasets/countries.js';
@@ -41,9 +46,19 @@ export default function(code,options,debug) {
 export function Iso(code,options,debug){
 	// Catch lowercase
 	var upperCode = code.toUpperCase();
+
+	// catch by length
 	if(upperCode.length === 2) {
-		console.log(countries_iso[`${upperCode}`]);
 		return countries_iso[`${upperCode}`];
+	
+	} else if(upperCode.length === 3) {
+		// a performance costly method
+		map(countries_iso, (iso,key) => {
+			if(iso === upperCode){
+				return key
+			}
+		})
+		
 	} else {
 		console.error('Iso Output requires a 2 Charachter country code -> us -> usa');
 	}
