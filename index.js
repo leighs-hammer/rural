@@ -111,7 +111,5 @@ export { Name as ruralName }
 
 
 export function rawset(item) {
-	var iOut = item
-
 
 }
