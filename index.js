@@ -50,15 +50,15 @@ export function Iso(code,options,debug){
 	// catch by length
 	if(upperCode.length === 2) {
 		return countries_iso[`${upperCode}`];
-	
 	} else if(upperCode.length === 3) {
 		// a performance costly method
-		map(countries_iso, (iso,key) => {
-			if(iso === upperCode){
-				return key
+		var sOut ="";
+		map(countries_iso, (item,key) => {
+			if(item === upperCode){
+				sOut = `${key}`;
 			}
 		})
-		
+		return sOut;
 	} else {
 		console.error('Iso Output requires a 2 Charachter country code -> us -> usa');
 	}
