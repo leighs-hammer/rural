@@ -1,4 +1,4 @@
-const countries_iso = {
+const isoList = {
 	"BD": "BGD",
 	"BE": "BEL",
 	"BF": "BFA",
@@ -249,4 +249,6 @@ const countries_iso = {
 	"UA": "UKR",
 	"QA": "QAT",
 	"MZ": "MOZ"
-	}
+}
+
+export default isoList;
