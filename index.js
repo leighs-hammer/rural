@@ -111,5 +111,10 @@ export { Name as ruralName }
 
 
 export function rawset(item) {
+	var rawData = item
+
+	console.error(rawData)
 
 }
+
+export {rawset as ruralRaw}
