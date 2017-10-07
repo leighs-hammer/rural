@@ -7,49 +7,58 @@ I am building this a normalization library cadidate.
 # Get Started
 
 Install via NPM
-
 `npm install rural --save`
 
 import the module, for example:
+`import Rural from 'rural'`
 
-`import rural from 'rural'`
+To use it:
+`Rural('us')` or `Rural('usa')` or `Rural('US')`
+=> Returns a full object of the countries details.
 
-There a couple of anscillary functions to handle additional lookups like ISO ALPHA 2 -> ALPHA 3 these can be included specifically.
+## Note : This may be overkill
 
+Often you need something simpler, the anscillary functions
+ 
 `import {ruralIso} from 'rural'`
 
 --- IF this dosnt make much sense ...... 
 
 ## Api
 
-Functions all share the same PARAMS:
-
-`rural(CODE,OUTPUT)`
-
-### CODE = {String}
-Example: `us` or `United States of America`
-
-### Options = {Object}
-
-Example: 
-
-```
-{
-	"type" : "single",
-	"case" : "upper"
-}
-```
-Outputs a single code or string to uppercase, this is the default if no options object is passed. 
-
-
-
-
 
 ## Functions
 
+### ruralIso
+Function returns the alternate ISO country code to what you pass it. 
 
 
-Returns the data requested in the output params. 
+Example:
+
+`ruralIso('US')`
+ => Returns
+`USA`
+
+Vice Versa 
+
+`ruralIso('USA')`
+=> Returns
+`US`
+
+Note this will catch case and miss matches in case, 
+`'US' = 'us' = 'Us' = 'uS'`
+
+### ruralName
+Function returns the country name from an ISO Aplha 2 or 3 code. 
+
+`ruralName('us')` or `ruralName('usa')`
+=> Returns
+`United States of America`
+
+Note this will catch case and miss matches in case, 
+`'US' = 'us' = 'Us' = 'uS'`
+
+
 
 ## Dependencies
 
