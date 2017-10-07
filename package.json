@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/leighs-hammer/rural/issues"
   },
-  "homepage": "https://github.com/leighs-hammer/rural#readme"
+  "homepage": "https://github.com/leighs-hammer/rural#readme",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
 }

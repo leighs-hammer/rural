@@ -53,5 +53,7 @@ Returns the data requested in the output params.
 
 ## Dependencies
 
+`lodash` -> https://lodash.com/
+Just a great utility library. 
 
 ## Testing
