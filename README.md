@@ -1,8 +1,7 @@
 # rural
 Currently under development, a country helper for js apps neededin to normalize or use a standard base to get, ISO codes, currencies, capitals and potentially more localised data such as states etc. 
 
-Why? As these are effectively JSON data sets, the return is fast and with out network latency of look up services external to the project. 
-I am building this a normalization library cadidate. 
+Why use a module over a lookup service? As these are effectively JSON data sets, the return is fast and with out network latency of look up services external to the project. 
 
 # Get Started
 
@@ -18,20 +17,17 @@ To use it:
 
 ## Note : This may be overkill
 
-Often you need something simpler, the anscillary functions
+Often you need something simpler, the additioanl functions may suit you needs:
  
-`import {ruralIso} from 'rural'`
+`import Rural, {ruralIso, ruralName} from 'rural'` or just what you need. 
 
---- IF this dosnt make much sense ...... 
-
-## Api
+# Api
 
 
 ## Functions
 
 ### ruralIso
-Function returns the alternate ISO country code to what you pass it. 
-
+Function returns the alternate ISO country code to what you pass it. Useful if your data set is in one either of the Alpha formats and you want to switch it to the other one. 
 
 Example:
 
@@ -49,7 +45,7 @@ Note this will catch case and miss matches in case,
 `'US' = 'us' = 'Us' = 'uS'`
 
 ### ruralName
-Function returns the country name from an ISO Aplha 2 or 3 code. 
+Function returns the country name from an ISO Aplha 2 or 3 code. Useful if you just want to work with ISO codes and return a full company name.
 
 `ruralName('us')` or `ruralName('usa')`
 => Returns
@@ -58,11 +54,11 @@ Function returns the country name from an ISO Aplha 2 or 3 code.
 Note this will catch case and miss matches in case, 
 `'US' = 'us' = 'Us' = 'uS'`
 
-
-
 ## Dependencies
 
 `lodash` -> https://lodash.com/
 Just a great utility library. 
 
 ## Testing
+
+Unit tests, and CI need to still be done.
