@@ -1,7 +1,23 @@
 # rural
-Currently under development, a country helper for js apps neededin to normalize or use a standard base to get, ISO codes, currencies, capitals and potentially more localised data such as states etc. 
+Currently under development, a country helper module for js apps neededin to normalize or use a standard base to get, ISO codes, currencies, capitals and potentially more localised data such as states etc. 
 
 Why use a module over a lookup service? As these are effectively JSON data sets, the return is fast and with out network latency of look up services external to the project. 
+
+## Notes on Requirements 
+
+Built using ES6 `import X from X` if your project isnt running something like Babel or a Webpack loader to allow access to next gen syntax, you will be facing some hell with this module. We are awaiting raw support in node at present, and of course global adoption! :)
+
+## Roadmaps
+
+### V 0.2+ 
+Include full country data Set for availability. 
+
+### V 0.3+
+Crowd sourced data managemnt for compilation, via example site.
+
+### V 0.4
+Additional functions added for currenct support. 
+
 
 # Get Started
 
@@ -23,8 +39,9 @@ Often you need something simpler, the additioanl functions may suit you needs:
 
 # Api
 
+Default API still TBD.
 
-## Functions
+## Additional Functions & Helpers
 
 ### ruralIso
 Function returns the alternate ISO country code to what you pass it. Useful if your data set is in one either of the Alpha formats and you want to switch it to the other one. 

@@ -1,13 +1,13 @@
 /**
  * Modules
  */
-import {map} from 'lodash';
+import {map} from 'lodash'
 
 /**
  * DataSets
  */
-import countries from './datasets/countries.js';
-import countries_iso from './datasets/countries_iso.js';
+import countries from './datasets/countries.js'
+import countries_iso from './datasets/countries_iso.js'
 
 /**
  * Rural
@@ -23,12 +23,12 @@ import countries_iso from './datasets/countries_iso.js';
 // default
 export default function(code,options,debug) {
 	// Options Modifiers
-
+	console.error('Currently Working on data set, the default function is not available.')
 	// Remove on production
 	// Logs out the params if the debug is passed
 	if(debug !== undefined && debug === true) {
-		console.log(code);
-		console.log(options);
+		console.log(code)
+		console.log(options)
 	}
 	// Return
 
@@ -45,33 +45,33 @@ export default function(code,options,debug) {
 
 export function Iso(code,options,debug){
 	// Catch lowercase
-	var upperCode = code.toUpperCase();
+	var upperCode = code.toUpperCase()
 
 	// catch by length
 	if(upperCode.length === 2) {
-		return countries_iso[`${upperCode}`];
+		return countries_iso[`${upperCode}`]
 	} else if(upperCode.length === 3) {
 		// a performance costly method
-		var sOut ="";
+		var sOut =''
 		map(countries_iso, (item,key) => {
 			if(item === upperCode){
-				sOut = `${key}`;
+				sOut = `${key}`
 			}
 		})
-		return sOut;
+		return sOut
 	} else {
-		console.error('Iso Output requires a 2 Charachter country code -> us -> usa');
+		console.error('Iso Output requires a 2 Charachter country code -> us -> usa')
 	}
 	// Remove on production
 	// Logs out the params if the debug is passed
 	if(debug !== undefined && debug === true) {
-		console.log(code);
-		console.log(options);
-		console.log(countries_iso);
+		console.log(code)
+		console.log(options)
+		console.log(countries_iso)
 	}
 	// Return
 }
-export { Iso as ruralIso };
+export { Iso as ruralIso }
 
 /**
  * Returns the country code from ISO or 3 Char code, Options and Debug ar oprional. 
@@ -82,7 +82,7 @@ export { Iso as ruralIso };
 
 export function Name(code,options,debug){
 	// Catch lowercase
-	var upperCode = code.toUpperCase();
+	var upperCode = code.toUpperCase()
 
 	if(upperCode.length === 2) {
 		return countries[`${upperCode}`]
@@ -92,14 +92,26 @@ export function Name(code,options,debug){
 		// return
 		return countries[`${lcode}`]
 	} else {
-		console.error('A valid ISO Alpha 2 or Alpha 3 code is required to look up country name');
+		console.error('A valid ISO Alpha 2 or Alpha 3 code is required to look up country name')
 	}
 	// Remove on production
 	// Logs out the params if the debug is passed
 	if(debug !== undefined && debug === true) {
-		console.log(code);
-		console.log(options);
+		console.log(code)
+		console.log(options)
 	}
 	// Return
 }
-export { Name as ruralName };
+export { Name as ruralName }
+
+/**
+ * Returns the full data set of a specific option. 
+ * @param {string} item 
+ */
+
+
+export function rawset(item) {
+	var iOut = item
+
+
+}
