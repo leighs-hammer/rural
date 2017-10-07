@@ -1,6 +1,6 @@
 {
   "name": "rural",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A simple helper for normalizing and returning ISO standard details for country information. ",
   "main": " ",
   "scripts": {
