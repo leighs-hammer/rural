@@ -1,11 +1,11 @@
 # rural
-Currently under development, a country helper module for js apps neededin to normalize or use a standard base to get, ISO codes, currencies, capitals and potentially more localised data such as states etc. 
+A country look up module for js apps neededing to normalize or use a standard base to get, ISO codes, currency info, capitals and more to follow. 
 
 Why use a module over a lookup service? As these are effectively JSON data sets, the return is fast and with out network latency of look up services external to the project. 
 
 ## Notes on Requirements 
 
-Built using ES6 `import X from X` if your project isnt running something like Babel or a Webpack loader to allow access to next gen syntax, you will be facing some hell with this module. We are awaiting raw support in node at present, and of course global adoption! :)
+Built using ES6 `import X from X` if your project isnt running something like Babel or a Webpack loader to allow access to next gen syntax, you will be facing some hell with this module. We are awaiting raw support in V8 at present for node coverage at present, and of course global adoption! :)
 
 ## Roadmaps
 
@@ -19,7 +19,7 @@ Crowd sourced data managemnt for compilation, via example site.
 Additional functions added for currenct support. 
 
 
-# Get Started
+# Fast Start
 
 Install via NPM
 `npm install rural --save`
@@ -31,6 +31,24 @@ To use it:
 `Rural('us')` or `Rural('usa')` or `Rural('US')`
 => Returns a full object of the countries details.
 
+```
+	{
+		"ISO2": "US",
+		"ISO3": "USA",
+		"name": "United States of America",
+		"captialCity": "Washington",
+		"dialingCode": "1",
+		"currency": "USD",
+		"currencyPosition": "pre",
+		"currencyMeta": true,
+		"currencySymbol": "$",
+		"currencyName": "US Dollar",
+		"currencyNamePlural": "US dollars",
+		"currecnyDecimalDigits": 2,
+		"currencyRounding": 0
+	}
+```
+
 ## Note : This may be overkill
 
 Often you need something simpler, the additioanl functions may suit you needs:
@@ -39,9 +57,70 @@ Often you need something simpler, the additioanl functions may suit you needs:
 
 # Api
 
-Default API still TBD.
+## Default Usage
+
+`Rural('CODE', OPTIONS, DEBUG)`
+
+### CODE : STRING : REQUIRED
+Refers to an ISO2 or ISO3 country code
+`'US'` or `'USA'` respectively, 
+
+### OPTIONS : OBJECT : OPTIONAL
+Options is placed in for further extesnion. 
+
+### DEBUG : BOOLEAN : OPTIONAL
+Passing a bool `true` will log the returned data should you require this. 
+
+### RETURNS : OBJECT
+returns an object of country data.
+
+```
+	{
+		"ISO2": "US",
+		"ISO3": "USA",
+		"name": "United States of America",
+		"captialCity": "Washington",
+		"dialingCode": "1",
+		"currency": "USD",
+		"currencyPosition": "pre",
+		"currencyMeta": true,
+		"currencySymbol": "$",
+		"currencyName": "US Dollar",
+		"currencyNamePlural": "US dollars",
+		"currecnyDecimalDigits": 2,
+		"currencyRounding": 0
+	}
+```
+
+### Example Usage : JSX
+
+Using lodash map function in a JSX to return all the countries info:
+
+```
+	<ul>
+		{map(Rural('USa'), (item,key)=>{
+			return <li>{key} : {item} </li>
+		})}
+	</ul>
+``` 
+Note the sanetization for sentence case or other nasties, in data inconsistencies.
+
+### Individual Example : JSX
+
+Using what you need specifically. 
+
+```
+	<h1>{Rural('us').name}</h1>
+```
+In this use case the `ruralName` submodule would be a better use case ( need to be imported), but uses a smaller more succint data set so is more performant.
+
+```
+	<h1>{ruralName('us')}</h1>
+```
 
 ## Additional Functions & Helpers
+These will run faster with ISO2 country codes as no loop and iterate will be needed, which is faster accross the board.
+These use optimized for purpose datasets so when paired with an ISO2 code will give the best performance.
 
 ### ruralIso
 Function returns the alternate ISO country code to what you pass it. Useful if your data set is in one either of the Alpha formats and you want to switch it to the other one. 
