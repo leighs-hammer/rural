@@ -51,9 +51,9 @@ To use it:
 
 ## Note : This may be overkill
 
-Often you need something simpler, the additioanl functions may suit you needs:
+Often you need something simpler, the additional functions may suit you needs better!
  
-`import Rural, {ruralIso, ruralName} from 'rural'` or just what you need. 
+`import Rural, {ruralIso, ruralName} from 'rural'` or just what you need `import {ruralName} from 'rural'`
 
 # Api
 
