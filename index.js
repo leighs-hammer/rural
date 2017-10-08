@@ -1,13 +1,14 @@
 /**
  * Modules
  */
-import {map} from 'lodash'
+const _  = require('lodash')
 
 /**
  * DataSets
  */
-import countries from './datasets/countries.js'
-import countries_iso from './datasets/countries_iso.js'
+const countries = require('./datasets/countries.json')
+const countries_iso = require('./datasets/countries_iso.json')
+const ruralFull = require('./datasets/rural.json')
 
 /**
  * Rural
@@ -53,7 +54,7 @@ export function Iso(code,options,debug){
 	} else if(upperCode.length === 3) {
 		// a performance costly method
 		var sOut =''
-		map(countries_iso, (item,key) => {
+		_.map(countries_iso, (item,key) => {
 			if(item === upperCode){
 				sOut = `${key}`
 			}
