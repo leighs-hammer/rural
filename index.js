@@ -23,13 +23,26 @@ const ruralFull = require('./datasets/rural.json')
 
 // default
 export default function(code,options,debug) {
-	// Options Modifiers
-	console.error('Currently Working on data set, the default function is not available.')
+	const upperCode = code.toUpperCase()
+
+	if(upperCode.length === 2) {
+		// fastest
+		return ruralFull[upperCode]
+	} else if(upperCode.length === 3) {
+		// loop
+		const codeIso = Iso(upperCode)
+		return ruralFull[`${codeIso}`]
+	} else {
+		console.error('Country Code to Short! requires either an ISO, AA or AAA code. ')
+	}
+
 	// Remove on production
 	// Logs out the params if the debug is passed
 	if(debug !== undefined && debug === true) {
-		console.log(code)
-		console.log(options)
+		console.log('Input Code Identifier: '+code)
+		console.log('Options : '+options)
+		console.log('Output Object: Only works with ISO2 Codes ')
+		console.log(ruralFull[upperCode])
 	}
 	// Return
 
