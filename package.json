@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/leighs-hammer/rural#readme",
   "dependencies": {
+    "jsonfile": "^4.0.0",
     "lodash": "^4.17.4"
   }
 }
