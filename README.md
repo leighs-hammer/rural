@@ -9,8 +9,11 @@ Built using ES6 `import X from X` if your project isnt running something like Ba
 
 ## Roadmaps
 
+### V 0.1+ : Available
+Includes a full set of data combined from multiple sources and it useable at present.
+
 ### V 0.2+ 
-Include full country data Set for availability. 
+Optimized sub module loaders for further rapid access mechanisms.
 
 ### V 0.3+
 Crowd sourced data managemnt for compilation, via example site.
@@ -61,9 +64,12 @@ Often you need something simpler, the additional functions may suit you needs be
 
 `Rural('CODE', OPTIONS, DEBUG)`
 
-### CODE : STRING : REQUIRED
+### CODE : STRING : SUGGESTED
 Refers to an ISO2 or ISO3 country code
-`'US'` or `'USA'` respectively, 
+`'US'` or `'USA'` respectively.
+
+If this is left null: 
+`Rural()` will return the entire rural data set.
 
 ### OPTIONS : OBJECT : OPTIONAL
 Options is placed in for further extesnion. 
