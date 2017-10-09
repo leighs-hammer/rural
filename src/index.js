@@ -22,19 +22,23 @@ const ruralFull = require('./datasets/rural.json')
  */
 
 // default
-export default function(code,options,debug) {
-	const upperCode = code.toUpperCase()
-
-	if(upperCode.length === 2) {
-		// fastest
-		return ruralFull[upperCode]
-	} else if(upperCode.length === 3) {
-		// loop
-		const codeIso = Iso(upperCode)
-		return ruralFull[`${codeIso}`]
+export default function(code='returnAll',options={},debug=false) {
+	if(code === 'returnAll') {
+		return ruralFull
 	} else {
-		console.error('Country Code to Short! requires either an ISO, AA or AAA code. ')
+		const upperCode = code.toUpperCase()
+		if(upperCode.length === 2) {
+			// fastest
+			return ruralFull[upperCode]
+		} else if(upperCode.length === 3) {
+			// loop
+			const codeIso = Iso(upperCode)
+			return ruralFull[`${codeIso}`]
+		} else {
+			console.error('Country Code to Short! requires either an ISO, AA or AAA code. ')
+		}
 	}
+	
 
 	// Remove on production
 	// Logs out the params if the debug is passed
