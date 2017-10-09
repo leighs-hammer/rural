@@ -100,6 +100,8 @@ returns an object of country data.
 ### ALL DATA
 Sometimes you may like to do the return once and iterate how you want from the full set. 
 `Rural()` => calling the default function with no params will return the complete data object.
+This can be useful to remove overhead to only your app code, for instance having all countries available to pivot data as you see fit.
+
 
 ### Example Usage : JSX
 
