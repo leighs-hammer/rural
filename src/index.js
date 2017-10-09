@@ -23,6 +23,7 @@ const ruralFull = require('./datasets/rural.json')
 
 // default
 export default function(code='returnAll',options={},debug=false) {
+
 	if(code === 'returnAll') {
 		return ruralFull
 	} else {

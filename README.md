@@ -97,6 +97,10 @@ returns an object of country data.
 	}
 ```
 
+### ALL DATA
+Sometimes you may like to do the return once and iterate how you want from the full set. 
+`Rural()` => calling the default function with no params will return the complete data object.
+
 ### Example Usage : JSX
 
 Using lodash map function in a JSX to return all the countries info:
