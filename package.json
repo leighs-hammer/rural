@@ -1,13 +1,13 @@
 {
   "name": "rural",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A simple helper module / funtions set for normalizing and returning ISO standard details for country information. and referencing country data in a combined format directly in your app, with out the need for external requests and latency. ",
   "main": "./dist/index.js",
   "scripts": {
     "test": "test",
     "babel": "babel src --presets babel-preset-es2015 --out-dir dist",
     "copy": "cp -R src/datasets/ dist/datasets",
-    "build":"npm run copy && npm run babel",
+    "build": "npm run copy && npm run babel",
     "prepublish": "npm run build"
   },
   "repository": {

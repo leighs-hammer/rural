@@ -5,7 +5,6 @@ Why use a module over a lookup service? As these are effectively JSON data sets,
 
 ## Notes on Requirements 
 
-Built using ES6 `import X from X` if your project isnt running something like Babel or a Webpack loader to allow access to next gen syntax, you will be facing some hell with this module. We are awaiting raw support in V8 at present for node coverage at present, and of course global adoption! :)
 
 ## Roadmaps
 
