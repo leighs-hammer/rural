@@ -4,7 +4,7 @@ A country look up module for js apps neededing to normalize or use a standard ba
 Why use a module over a lookup service? As these are effectively JSON data sets, the return is fast and with out network latency of look up services external to the project. 
 
 ## Notes on Requirements 
-
+The previous dependency of lodash has been removed as of V 0.1.11
 
 ## Roadmaps
 
@@ -163,8 +163,6 @@ Note this will catch case and miss matches in case,
 
 ## Dependencies
 
-`lodash` -> https://lodash.com/
-Just a great utility library. 
 
 ## Testing
 

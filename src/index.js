@@ -1,7 +1,6 @@
 /**
  * Modules
  */
-const _  = require('lodash')
 
 /**
  * DataSets
@@ -72,11 +71,13 @@ export function Iso(code,options,debug){
 	} else if(upperCode.length === 3) {
 		// a performance costly method
 		var sOut =''
-		_.map(countries_iso, (item,key) => {
-			if(item === upperCode){
-				sOut = `${key}`
+		//console.log(Object.entries(countries_iso))
+		 for (const [key, item] of Object.entries(countries_iso)) {
+				if(item === upperCode){
+					sOut = `${key}`
+				}
 			}
-		})
+
 		return sOut
 	} else {
 		console.error('Iso Output requires a 2 Charachter country code -> us -> usa')
