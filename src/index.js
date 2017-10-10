@@ -126,14 +126,33 @@ export { Name as ruralName }
 
 /**
  * Returns the full data set of a specific option. 
- * @param {string} item 
+ * @param {string} item
+ * 'full' // 'names' // 'iso' 
  */
 
 
 export function rawset(item) {
-	var rawData = item
+	if(item !== undefined) {
+		var upperCode = item.toUpperCase()
+		switch (upperCode) {
+			case 'FULL':
+				return ruralFull
+				break;
+			case 'ISO':
+				return countries_iso
+				break;
+			case 'NAMES':
+				return countries
+				break;
 
-	console.error(rawData)
+			default:
+				console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
+				break;
+		}
+	} else {
+		console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
+	}
+	
 
 }
 
