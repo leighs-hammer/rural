@@ -22,7 +22,7 @@ const ruralFull = require('./datasets/rural.json')
 
 // default
 export default function(code='returnAll',options={},debug=false) {
-
+	
 	if(code === 'returnAll') {
 		return ruralFull
 	} else {
@@ -152,8 +152,37 @@ export function rawset(item) {
 	} else {
 		console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
 	}
-	
-
 }
 
 export {rawset as ruralRaw}
+
+
+export function currencyCode(code
+	) {
+	
+	if (!code) {return false}
+	const values = Object.values(ruralFull)
+	const foundCountry = values.find((country) => {
+		return country.currency === code.toUpperCase()
+	})
+
+	if (!foundCountry) {
+		return { 
+			error: true,
+			message: `No country could be found with the code : ${code.toUpperCase()}`,
+		}
+	}
+	const cleanCurrency = {
+		currency: foundCountry.currency,
+		currencyPosition: foundCountry.currencyPosition,
+		currencyMeta: foundCountry.currencyMeta,
+		currencySymbol: foundCountry.currencySymbol,
+		currencyName: foundCountry.currencyName,
+		currencyNamePlural: foundCountry.currencyNamePlural,
+		currecnyDecimalDigits: foundCountry.currecnyDecimalDigits,
+		currencyRounding: foundCountry.currencyRounding,
+	}
+	return cleanCurrency
+}
+
+export {currencyCode as ruralCurrency}

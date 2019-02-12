@@ -11,15 +11,6 @@ The previous dependency of lodash has been removed as of V 0.1.11
 ### V 0.1+ : Available
 Includes a full set of data combined from multiple sources and it useable at present.
 
-### V 0.2+ 
-Optimized sub module loaders for further rapid access mechanisms.
-
-### V 0.3+
-Crowd sourced data managemnt for compilation, via example site.
-
-### V 0.4
-Additional functions added for currenct support. 
-
 
 # Fast Start
 
@@ -161,9 +152,26 @@ Function returns the country name from an ISO Aplha 2 or 3 code. Useful if you j
 Note this will catch case and miss matches in case, 
 `'US' = 'us' = 'Us' = 'uS'`
 
-## Dependencies
+### ruralCurrency
+Takes in a currency code such as CAD or GBP or USD and returns an object of relevant currency information: 
 
+the function: `ruralCurrency('gbp')` 
+will fix the code eg `gbp` === `GBP` === `GbP` all are taken to uppercase
+
+will return :
+
+```
+{ currency: 'GBP',
+  currencyPosition: 'pre',
+  currencyMeta: true,
+  currencySymbol: '£',
+  currencyName: 'British Pound Sterling',
+  currencyNamePlural: 'British pounds sterling',
+  currecnyDecimalDigits: 2,
+  currencyRounding: 0 }
+	```
+Especially useful for eccomerce builds, if any information is incorrect please raise an issue or PR a fix into the base data set on github. 
 
 ## Testing
 
-Unit tests, and CI need to still be done.
+Initial testing has been added, these can be run with `npm run test`
