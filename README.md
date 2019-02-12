@@ -1,4 +1,8 @@
 # rural
+[![Build Status](https://travis-ci.com/leighs-hammer/rural.svg?branch=master)](https://travis-ci.com/leighs-hammer/rural)
+[![Coverage Status](https://coveralls.io/repos/github/leighs-hammer/rural/badge.svg?branch=master)](https://coveralls.io/github/leighs-hammer/rural?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/leighs-hammer/rural/badge.svg?targetFile=package.json)](https://snyk.io/test/github/leighs-hammer/rural?targetFile=package.json)
+
 A country look up module for js apps neededing to normalize or use a standard base to get, ISO codes, currency info, capitals and more to follow. 
 
 Why use a module over a lookup service? As these are effectively JSON data sets, the return is fast and with out network latency of look up services external to the project. 
