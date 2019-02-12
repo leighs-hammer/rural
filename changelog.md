@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## V 0.1.2
+## V 0.2.0
 1. Revise dependencies
 2. Add currency details look up from currency code
 3. Add intitial testing 
