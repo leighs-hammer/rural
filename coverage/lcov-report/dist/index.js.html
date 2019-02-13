@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for dist/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">dist/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">48.08% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>50/104</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.31% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>21/65</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">55.56% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">56.63% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>47/83</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">250×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">250×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">250×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">250×</span>
+<span class="cline-any cline-yes">250×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">250×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">697×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+&nbsp;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+exports.ruralIso = exports.Iso = Iso;
+exports.ruralName = exports.Name = Name;
+exports.ruralRaw = exports.rawset = rawset;
+exports.ruralCurrency = exports.currencyCode = currencyCode;
+&nbsp;
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || <span class="branch-1 cbranch-no" title="branch not covered" >_iterableToArrayLimit(arr, i) </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >_nonIterableRest();</span> }
+&nbsp;
+<span class="fstat-no" title="function not covered" >function _nonIterableRest() {</span> <span class="cstat-no" title="statement not covered" >throw new TypeError("Invalid attempt to destructure non-iterable instance"); </span>}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function _iterableToArrayLimit(arr, i) {</span> <span class="cstat-no" title="statement not covered" >var _arr = []; <span class="cstat-no" title="statement not covered" ></span>var _n = true; <span class="cstat-no" title="statement not covered" ></span>var _d = false; <span class="cstat-no" title="statement not covered" ></span>var _e = undefined; <span class="cstat-no" title="statement not covered" ></span>try { <span class="cstat-no" title="statement not covered" >for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { <span class="cstat-no" title="statement not covered" >_arr.push(_s.value); <span class="cstat-no" title="statement not covered" ></span>if (i &amp;&amp; _arr.length === i) <span class="cstat-no" title="statement not covered" >break; </span></span>} </span>} catch (err) { <span class="cstat-no" title="statement not covered" >_d = true; <span class="cstat-no" title="statement not covered" ></span>_e = err; </span>} finally { <span class="cstat-no" title="statement not covered" >try { <span class="cstat-no" title="statement not covered" >if (!_n &amp;&amp; _i["return"] != null) <span class="cstat-no" title="statement not covered" >_i["return"](); </span></span>} finally { <span class="cstat-no" title="statement not covered" >if (_d) <span class="cstat-no" title="statement not covered" >throw _e; </span></span>} </span>} <span class="cstat-no" title="statement not covered" ></span>return _arr; </span>}
+&nbsp;
+function _arrayWithHoles(arr) { <span class="missing-if-branch" title="else path not taken" >E</span>if (Array.isArray(arr)) return arr; }
+&nbsp;
+/**
+ * Modules
+ */
+&nbsp;
+/**
+ * DataSets
+ */
+const countries = require('./datasets/countries.json');
+&nbsp;
+const countries_iso = require('./datasets/countries_iso.json');
+&nbsp;
+const ruralFull = require('./datasets/rural.json');
+/**
+ * Rural
+ * 
+ * Default Params. 
+ * @param {number} code
+ * @param {object} options
+ * @param {boolean} debug
+ * @return {string, object}
+ * 
+ */
+// default
+&nbsp;
+&nbsp;
+function _default() {
+  let code = arguments.length &gt; 0 &amp;&amp; arguments[0] !== undefined ? arguments[0] : 'returnAll';
+  let options = arguments.length &gt; 1 &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >arguments[1] !== undefined </span>? <span class="branch-0 cbranch-no" title="branch not covered" >arguments[1] </span>: {};
+  let debug = arguments.length &gt; 2 &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >arguments[2] !== undefined </span>? <span class="branch-0 cbranch-no" title="branch not covered" >arguments[2] </span>: false;
+&nbsp;
+  if (code === 'returnAll') {
+    return ruralFull;
+  } else {
+    const upperCode = code.toUpperCase();
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (upperCode.length === 2) {
+      // fastest
+<span class="cstat-no" title="statement not covered" >      return ruralFull[upperCode];</span>
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (upperCode.length === 3) {
+      // loop
+      const codeIso = Iso(upperCode);
+      return ruralFull[`${codeIso}`];
+    } else {
+<span class="cstat-no" title="statement not covered" >      console.error('Country Code to Short! requires either an ISO, AA or AAA code. ');</span>
+    }
+  } // Remove on production
+  // Logs out the params if the debug is passed
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (debug !== undefined &amp;&amp; debug === true) {</span>
+<span class="cstat-no" title="statement not covered" >    console.log('Input Code Identifier: ' + code);</span>
+<span class="cstat-no" title="statement not covered" >    console.log('Options : ' + options);</span>
+<span class="cstat-no" title="statement not covered" >    console.log('Output Object: Only works with ISO2 Codes ');</span>
+<span class="cstat-no" title="statement not covered" >    console.log(ruralFull[upperCode]);</span>
+  } // Return
+&nbsp;
+} // ancsiliraries
+&nbsp;
+/**
+ * Returns the ISO Alpha 2 code to Aplpha 3, Options and Debug ar oprional. 
+ * @param {string} code 
+ * @param {object} options 
+ * @param {string , object} debug 
+ */
+&nbsp;
+&nbsp;
+function Iso(code, options, debug) {
+  // Catch lowercase
+  var upperCode = code.toUpperCase(); // catch by length
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (upperCode.length === 2) {
+<span class="cstat-no" title="statement not covered" >    return countries_iso[`${upperCode}`];</span>
+  } else <span class="missing-if-branch" title="else path not taken" >E</span>if (upperCode.length === 3) {
+    // a performance costly method
+    var sOut = ''; //console.log(Object.entries(countries_iso))
+&nbsp;
+    for (const _ref of Object.entries(countries_iso)) {
+      var _ref2 = _slicedToArray(_ref, 2);
+&nbsp;
+      const key = _ref2[0];
+      const item = _ref2[1];
+&nbsp;
+      if (item === upperCode) {
+        sOut = `${key}`;
+      }
+    }
+&nbsp;
+    return sOut;
+  } else {
+<span class="cstat-no" title="statement not covered" >    console.error('Iso Output requires a 2 Charachter country code -&gt; us -&gt; usa');</span>
+  } // Remove on production
+  // Logs out the params if the debug is passed
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (debug !== undefined &amp;&amp; debug === true) {</span>
+<span class="cstat-no" title="statement not covered" >    console.log(code);</span>
+<span class="cstat-no" title="statement not covered" >    console.log(options);</span>
+<span class="cstat-no" title="statement not covered" >    console.log(countries_iso);</span>
+  } // Return
+&nbsp;
+}
+&nbsp;
+/**
+ * Returns the country code from ISO or 3 Char code, Options and Debug ar oprional. 
+ * @param {string} code 
+ * @param {object} options 
+ * @param {string , object} debug 
+ */
+<span class="fstat-no" title="function not covered" >function Name(code, options, debug) {</span>
+  // Catch lowercase
+<span class="cstat-no" title="statement not covered" >  var upperCode = code.toUpperCase();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (upperCode.length === 2) {</span>
+<span class="cstat-no" title="statement not covered" >    return countries[`${upperCode}`]; </span>// return
+  } else <span class="cstat-no" title="statement not covered" >if (upperCode.length === 3) {</span>
+<span class="cstat-no" title="statement not covered" >    var lcode = Iso(upperCode, null, null); </span>// return
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return countries[`${lcode}`];</span>
+  } else {
+<span class="cstat-no" title="statement not covered" >    console.error('A valid ISO Alpha 2 or Alpha 3 code is required to look up country name');</span>
+  } // Remove on production
+  // Logs out the params if the debug is passed
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (debug !== undefined &amp;&amp; debug === true) {</span>
+<span class="cstat-no" title="statement not covered" >    console.log(code);</span>
+<span class="cstat-no" title="statement not covered" >    console.log(options);</span>
+  } // Return
+&nbsp;
+}
+&nbsp;
+/**
+ * Returns the full data set of a specific option. 
+ * @param {string} item
+ * 'full' // 'names' // 'iso' 
+ */
+<span class="fstat-no" title="function not covered" >function rawset(item) {</span>
+<span class="cstat-no" title="statement not covered" >  if (item !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >    var upperCode = item.toUpperCase();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    switch (upperCode) {</span>
+      case 'FULL':
+<span class="cstat-no" title="statement not covered" >        return ruralFull;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+&nbsp;
+      case 'ISO':
+<span class="cstat-no" title="statement not covered" >        return countries_iso;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+&nbsp;
+      case 'NAMES':
+<span class="cstat-no" title="statement not covered" >        return countries;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+&nbsp;
+      default:
+<span class="cstat-no" title="statement not covered" >        console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    }
+  } else {
+<span class="cstat-no" title="statement not covered" >    console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');</span>
+  }
+}
+&nbsp;
+function currencyCode(code) {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!code) {
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+  }
+&nbsp;
+  const values = Object.values(ruralFull);
+  const foundCountry = values.find(country =&gt; {
+    return country.currency === code.toUpperCase();
+  });
+&nbsp;
+  if (!foundCountry) {
+    return {
+      error: true,
+      message: `No country could be found with the code : ${code.toUpperCase()}`
+    };
+  }
+&nbsp;
+  const cleanCurrency = {
+    currency: foundCountry.currency,
+    currencyPosition: foundCountry.currencyPosition,
+    currencyMeta: foundCountry.currencyMeta,
+    currencySymbol: foundCountry.currencySymbol,
+    currencyName: foundCountry.currencyName,
+    currencyNamePlural: foundCountry.currencyNamePlural,
+    currecnyDecimalDigits: foundCountry.currecnyDecimalDigits,
+    currencyRounding: foundCountry.currencyRounding
+  };
+  return cleanCurrency;
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Feb 12 2019 23:41:29 GMT+0000 (Greenwich Mean Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
