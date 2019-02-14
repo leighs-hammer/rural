@@ -1,6 +1,11 @@
 import {expect} from 'chai'
 import Rural, {ruralIso, ruralName, ruralRaw, ruralCurrency} from './index'
 
+// assert sources
+const ruralFull = require('./datasets/rural.json')
+const countries_iso = require('./datasets/countries_iso.json')
+const countries = require('./datasets/countries.json')
+
 // Dist
 import BuiltRural  from '../dist/index'
 /**
@@ -70,6 +75,29 @@ describe('Name : a function that returns the counrties name when passed a valid 
 		expect(input).to.be.false
 	})
 })
+
+/**
+ * rawset
+ * a function that simply returns a raw set of data int he fastest manner 
+ */
+describe('RawSet : a function that returns raw rapid access data sets', () => {
+	
+	it('should return the full data set', () => {
+		const input = ruralRaw('FULL')
+		expect(input).to.be.eql(ruralFull)
+	})
+
+	it('should return the full data set', () => {
+		const input = ruralRaw('ISO')
+		expect(input).to.be.eql(countries_iso)
+	})
+	
+	it('should return the full data set', () => {
+		const input = ruralRaw('NAMES')
+		expect(input).to.be.eql(countries)
+	})
+})
+
 /**
  * Currency Helpers
  */

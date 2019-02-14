@@ -150,10 +150,12 @@ export function rawset(item) {
 
 			default:
 				console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
+				return false
 				break;
 		}
 	} else {
 		console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
+		return false
 	}
 }
 

@@ -61,6 +61,7 @@ function _default() {
       return ruralFull[`${codeIso}`];
     } else {
       console.error('Country Code to Short! requires either an ISO, AA or AAA code. ');
+      return false;
     }
   } // Remove on production
   // Logs out the params if the debug is passed
@@ -107,6 +108,7 @@ function Iso(code, options, debug) {
     return sOut;
   } else {
     console.error('Iso Output requires a 2 Charachter country code -> us -> usa');
+    return false;
   } // Remove on production
   // Logs out the params if the debug is passed
 
@@ -137,6 +139,7 @@ function Name(code, options, debug) {
     return countries[`${lcode}`];
   } else {
     console.error('A valid ISO Alpha 2 or Alpha 3 code is required to look up country name');
+    return false;
   } // Remove on production
   // Logs out the params if the debug is passed
 

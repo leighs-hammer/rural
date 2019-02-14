@@ -36,6 +36,43 @@ describe('Default should return a full list of all countries', () => {
   });
 });
 /**
+ * Iso
+ */
+
+describe('Iso : a function that returns the iso 2 or 3 dependent on the iso input', () => {
+  it('shouyld return ISO3 with a ISO2 input', () => {
+    const input = (0, _index.ruralIso)('US');
+    (0, _chai.expect)(input).to.be.eql('USA');
+  });
+  it('shouyld return ISO2 with a ISO3 input', () => {
+    const input = (0, _index.ruralIso)('UsA');
+    (0, _chai.expect)(input).to.be.eql('US');
+  });
+  it('should return a console error when a non ISO is passed', () => {
+    const input = (0, _index.ruralIso)('UsAAA');
+    (0, _chai.expect)(input).to.be.false;
+  });
+});
+/**
+ * Name
+ * Returns the name of the country based on Iso input
+ */
+
+describe('Name : a function that returns the counrties name when passed a valid ISO country code', () => {
+  it('Should return the countries name when passed valid ISO2', () => {
+    const input = (0, _index.ruralName)('gb');
+    (0, _chai.expect)(input).to.be.eql('United Kingdom');
+  });
+  it('Should return the countries name when passed valid ISO3', () => {
+    const input = (0, _index.ruralName)('CaN');
+    (0, _chai.expect)(input).to.be.eql('Canada');
+  });
+  it('Should return false when passed an invalid ISO', () => {
+    const input = (0, _index.ruralName)('CaNad');
+    (0, _chai.expect)(input).to.be.false;
+  });
+});
+/**
  * Currency Helpers
  */
 
