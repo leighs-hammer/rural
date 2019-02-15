@@ -10,7 +10,7 @@
     "copy": "cp -R src/datasets/ dist/datasets",
     "build": "npm run copy && npm run babel",
     "prepublish": "npm run build",
-    "cover": "istanbul cover _mocha ./dist/index.test.js",
+    "cover": "npm run build && istanbul cover _mocha ./dist/index.test.js",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
