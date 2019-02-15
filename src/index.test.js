@@ -7,7 +7,8 @@ const countries_iso = require('./datasets/countries_iso.json')
 const countries = require('./datasets/countries.json')
 
 // Dist
-import BuiltRural  from '../dist/index'
+import BuiltRural, {}  from '../dist/index'
+
 /**
  * Test built files
  */
@@ -22,15 +23,29 @@ describe('The built files to work', () => {
  * Default
  */
 describe('Default should return a full list of all countries', () => {
+	
 	it('should return the countries object', () => {
 		const all = Rural()
 		expect(all).to.be.a('object')
+		expect(all).to.be.eql(ruralFull)
 	})
 
-	it('should return a single country', () => {
+	it('should return a single country ISO3', () => {
 		const all = Rural('uSa')
 		expect(all.currencySymbol).to.be.eql('$')
 	})
+
+	it('should return a single country ISO 2', () => {
+		const all = Rural('uS')
+		expect(all.currencySymbol).to.be.eql('$')
+	})
+
+	it('should return a single country ISO 2', () => {
+		const all = Rural('i')
+		expect(all).to.be.false
+	})
+
+
 })
 
 /**
@@ -50,6 +65,11 @@ describe('Iso : a function that returns the iso 2 or 3 dependent on the iso inpu
 	
 	it('should return a console error when a non ISO is passed',  () => {
 		const input = ruralIso('UsAAA')
+		expect(input).to.be.false
+	})
+
+	it('should return a console error when a non ISO is passed',  () => {
+		const input = ruralIso()
 		expect(input).to.be.false
 	})
 })
@@ -74,6 +94,11 @@ describe('Name : a function that returns the counrties name when passed a valid 
 		const input = ruralName('CaNad')
 		expect(input).to.be.false
 	})
+	
+	it('Should return fail and not throw', () => {
+		const input = ruralName()
+		expect(input).to.be.false
+	})
 })
 
 /**
@@ -95,6 +120,11 @@ describe('RawSet : a function that returns raw rapid access data sets', () => {
 	it('should return the full data set', () => {
 		const input = ruralRaw('NAMES')
 		expect(input).to.be.eql(countries)
+	})
+
+	it('should fail gracefully', () => {
+		const input = ruralRaw('sdcmdilmcd')
+		expect(input).to.be.false
 	})
 })
 
@@ -128,4 +158,20 @@ describe('Rural Currency Helper Tests', () => {
 		expect(invalid.message).to.be.a('string')
 	})
 
+	it('should throw an error with an invalid message', () => {
+		const invalid = ruralCurrency('')
+		expect(invalid).to.be.false
+	})
+
+})
+
+/**
+ * Datasets
+ */
+describe('Test that all datasets are exporting', () => {
+	it('Should export all the objects', () => {
+		expect(ruralFull).to.be.a('object')
+		expect(countries_iso).to.be.a('object')
+		expect(countries).to.be.a('object')
+	})
 })

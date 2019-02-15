@@ -22,35 +22,23 @@ const ruralFull = require('./datasets/rural.json')
 
 // default
 export default function(code='returnAll',options={},debug=false) {
-	
-	if(code === 'returnAll') {
-		return ruralFull
-	} else {
-		const upperCode = code.toUpperCase()
-		if(upperCode.length === 2) {
-			// fastest
-			return ruralFull[upperCode]
-		} else if(upperCode.length === 3) {
-			// loop
-			const codeIso = Iso(upperCode)
-			return ruralFull[`${codeIso}`]
-		} else {
-			console.error('Country Code to Short! requires either an ISO, AA or AAA code. ')
-			return false
-		}
-	}
-	
-
-	// Remove on production
-	// Logs out the params if the debug is passed
-	if(debug !== undefined && debug === true) {
-		console.log('Input Code Identifier: '+code)
-		console.log('Options : '+options)
-		console.log('Output Object: Only works with ISO2 Codes ')
-		console.log(ruralFull[upperCode])
-	}
-	// Return
-
+  
+  if(code === 'returnAll') {
+    return ruralFull
+  } else {
+    const upperCode = code.toUpperCase()
+    if(upperCode.length === 2) {
+      // fastest
+      return ruralFull[upperCode]
+    } else if(upperCode.length === 3) {
+      // loop
+      const codeIso = Iso(upperCode)
+      return ruralFull[`${codeIso}`]
+    } else {
+      console.error('Country Code to Short! requires either an ISO, AA or AAA code. ')
+      return false
+    }
+  }
 }
 
 // ancsiliraries
@@ -63,35 +51,28 @@ export default function(code='returnAll',options={},debug=false) {
  */
 
 export function Iso(code,options,debug){
-	// Catch lowercase
-	var upperCode = code.toUpperCase()
+  if(!code) {return false}
+  // Catch lowercase
+  var upperCode = code.toUpperCase()
 
-	// catch by length
-	if(upperCode.length === 2) {
-		return countries_iso[`${upperCode}`]
-	} else if(upperCode.length === 3) {
-		// a performance costly method
-		var sOut =''
-		//console.log(Object.entries(countries_iso))
-		 for (const [key, item] of Object.entries(countries_iso)) {
-				if(item === upperCode){
-					sOut = `${key}`
-				}
-			}
+  // catch by length
+  if(upperCode.length === 2) {
+    return countries_iso[`${upperCode}`]
+  } else if(upperCode.length === 3) {
+    // a performance costly method
+    var sOut =''
+    //console.log(Object.entries(countries_iso))
+     for (const [key, item] of Object.entries(countries_iso)) {
+        if(item === upperCode){
+          sOut = `${key}`
+        }
+      }
 
-		return sOut
-	} else {
-		console.error('Iso Output requires a 2 Charachter country code -> us -> usa')
-		return false
-	}
-	// Remove on production
-	// Logs out the params if the debug is passed
-	if(debug !== undefined && debug === true) {
-		console.log(code)
-		console.log(options)
-		console.log(countries_iso)
-	}
-	// Return
+    return sOut
+  } else {
+    console.error('Iso Output requires a 2 Charachter country code -> us -> usa')
+    return false
+  }
 }
 export { Iso as ruralIso }
 
@@ -103,27 +84,21 @@ export { Iso as ruralIso }
  */
 
 export function Name(code,options,debug){
-	// Catch lowercase
-	var upperCode = code.toUpperCase()
+  if(!code){return false}
+  // Catch lowercase
+  var upperCode = code.toUpperCase()
 
-	if(upperCode.length === 2) {
-		return countries[`${upperCode}`]
-		// return
-	} else if (upperCode.length === 3) {
-		var lcode = Iso(upperCode, null, null)
-		// return
-		return countries[`${lcode}`]
-	} else {
-		console.error('A valid ISO Alpha 2 or Alpha 3 code is required to look up country name')
-		return false
-	}
-	// Remove on production
-	// Logs out the params if the debug is passed
-	if(debug !== undefined && debug === true) {
-		console.log(code)
-		console.log(options)
-	}
-	// Return
+  if(upperCode.length === 2) {
+    return countries[`${upperCode}`]
+    // return
+  } else if (upperCode.length === 3) {
+    var lcode = Iso(upperCode, null, null)
+    // return
+    return countries[`${lcode}`]
+  } else {
+    console.error('A valid ISO Alpha 2 or Alpha 3 code is required to look up country name')
+    return false
+  }
 }
 export { Name as ruralName }
 
@@ -135,59 +110,58 @@ export { Name as ruralName }
 
 
 export function rawset(item) {
-	if(item !== undefined) {
-		var upperCode = item.toUpperCase()
-		switch (upperCode) {
-			case 'FULL':
-				return ruralFull
-				break;
-			case 'ISO':
-				return countries_iso
-				break;
-			case 'NAMES':
-				return countries
-				break;
+  if(item !== undefined) {
+    var upperCode = item.toUpperCase()
+    switch (upperCode) {
+      case 'FULL':
+        return ruralFull
+        break;
+      case 'ISO':
+        return countries_iso
+        break;
+      case 'NAMES':
+        return countries
+        break;
 
-			default:
-				console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
-				return false
-				break;
-		}
-	} else {
-		console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
-		return false
-	}
+      default:
+        console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
+        return false
+        break;
+    }
+  } else {
+    console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
+    return false
+  }
 }
 
 export {rawset as ruralRaw}
 
 
-export function currencyCode(code
-	) {
-	
-	if (!code) {return false}
-	const values = Object.values(ruralFull)
-	const foundCountry = values.find((country) => {
-		return country.currency === code.toUpperCase()
-	})
+export function currencyCode(code) {
+  
+  if (!code) {return false}
+  const values = Object.values(ruralFull)
+  const foundCountry = values.find((country) => {
+    return country.currency === code.toUpperCase()
+  })
 
-	if (!foundCountry) {
-		return { 
-			error: true,
-			message: `No country could be found with the code : ${code.toUpperCase()}`,
-		}
-	}
-	const cleanCurrency = {
-		currency: foundCountry.currency,
-		currencyPosition: foundCountry.currencyPosition,
-		currencyMeta: foundCountry.currencyMeta,
-		currencySymbol: foundCountry.currencySymbol,
-		currencyName: foundCountry.currencyName,
-		currencyNamePlural: foundCountry.currencyNamePlural,
-		currecnyDecimalDigits: foundCountry.currecnyDecimalDigits,
-		currencyRounding: foundCountry.currencyRounding,
-	}
-	return cleanCurrency
+  if (!foundCountry) {
+    return { 
+      error: true,
+      message: `No country could be found with the code : ${code.toUpperCase()}`,
+    }
+  }
+  const cleanCurrency = {
+    currency: foundCountry.currency,
+    currencyPosition: foundCountry.currencyPosition,
+    currencyMeta: foundCountry.currencyMeta,
+    currencySymbol: foundCountry.currencySymbol,
+    currencyName: foundCountry.currencyName,
+    currencyNamePlural: foundCountry.currencyNamePlural,
+    currecnyDecimalDigits: foundCountry.currecnyDecimalDigits,
+    currencyRounding: foundCountry.currencyRounding,
+  }
+  return cleanCurrency
 }
 
 export {currencyCode as ruralCurrency}

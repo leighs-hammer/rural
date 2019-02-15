@@ -63,17 +63,7 @@ function _default() {
       console.error('Country Code to Short! requires either an ISO, AA or AAA code. ');
       return false;
     }
-  } // Remove on production
-  // Logs out the params if the debug is passed
-
-
-  if (debug !== undefined && debug === true) {
-    console.log('Input Code Identifier: ' + code);
-    console.log('Options : ' + options);
-    console.log('Output Object: Only works with ISO2 Codes ');
-    console.log(ruralFull[upperCode]);
-  } // Return
-
+  }
 } // ancsiliraries
 
 /**
@@ -85,7 +75,11 @@ function _default() {
 
 
 function Iso(code, options, debug) {
-  // Catch lowercase
+  if (!code) {
+    return false;
+  } // Catch lowercase
+
+
   var upperCode = code.toUpperCase(); // catch by length
 
   if (upperCode.length === 2) {
@@ -109,16 +103,7 @@ function Iso(code, options, debug) {
   } else {
     console.error('Iso Output requires a 2 Charachter country code -> us -> usa');
     return false;
-  } // Remove on production
-  // Logs out the params if the debug is passed
-
-
-  if (debug !== undefined && debug === true) {
-    console.log(code);
-    console.log(options);
-    console.log(countries_iso);
-  } // Return
-
+  }
 }
 
 /**
@@ -128,7 +113,11 @@ function Iso(code, options, debug) {
  * @param {string , object} debug 
  */
 function Name(code, options, debug) {
-  // Catch lowercase
+  if (!code) {
+    return false;
+  } // Catch lowercase
+
+
   var upperCode = code.toUpperCase();
 
   if (upperCode.length === 2) {
@@ -140,15 +129,7 @@ function Name(code, options, debug) {
   } else {
     console.error('A valid ISO Alpha 2 or Alpha 3 code is required to look up country name');
     return false;
-  } // Remove on production
-  // Logs out the params if the debug is passed
-
-
-  if (debug !== undefined && debug === true) {
-    console.log(code);
-    console.log(options);
-  } // Return
-
+  }
 }
 
 /**
@@ -175,10 +156,12 @@ function rawset(item) {
 
       default:
         console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
+        return false;
         break;
     }
   } else {
     console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
+    return false;
   }
 }
 

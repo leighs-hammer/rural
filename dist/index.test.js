@@ -10,7 +10,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-// Dist
+// assert sources
+const ruralFull = require('./datasets/rural.json');
+
+const countries_iso = require('./datasets/countries_iso.json');
+
+const countries = require('./datasets/countries.json'); // Dist
+
 
 /**
  * Test built files
@@ -29,10 +35,19 @@ describe('Default should return a full list of all countries', () => {
   it('should return the countries object', () => {
     const all = (0, _index.default)();
     (0, _chai.expect)(all).to.be.a('object');
+    (0, _chai.expect)(all).to.be.eql(ruralFull);
   });
-  it('should return a single country', () => {
+  it('should return a single country ISO3', () => {
     const all = (0, _index.default)('uSa');
     (0, _chai.expect)(all.currencySymbol).to.be.eql('$');
+  });
+  it('should return a single country ISO 2', () => {
+    const all = (0, _index.default)('uS');
+    (0, _chai.expect)(all.currencySymbol).to.be.eql('$');
+  });
+  it('should return a single country ISO 2', () => {
+    const all = (0, _index.default)('i');
+    (0, _chai.expect)(all).to.be.false;
   });
 });
 /**
@@ -52,6 +67,10 @@ describe('Iso : a function that returns the iso 2 or 3 dependent on the iso inpu
     const input = (0, _index.ruralIso)('UsAAA');
     (0, _chai.expect)(input).to.be.false;
   });
+  it('should return a console error when a non ISO is passed', () => {
+    const input = (0, _index.ruralIso)();
+    (0, _chai.expect)(input).to.be.false;
+  });
 });
 /**
  * Name
@@ -69,6 +88,33 @@ describe('Name : a function that returns the counrties name when passed a valid 
   });
   it('Should return false when passed an invalid ISO', () => {
     const input = (0, _index.ruralName)('CaNad');
+    (0, _chai.expect)(input).to.be.false;
+  });
+  it('Should return fail and not throw', () => {
+    const input = (0, _index.ruralName)();
+    (0, _chai.expect)(input).to.be.false;
+  });
+});
+/**
+ * rawset
+ * a function that simply returns a raw set of data int he fastest manner 
+ */
+
+describe('RawSet : a function that returns raw rapid access data sets', () => {
+  it('should return the full data set', () => {
+    const input = (0, _index.ruralRaw)('FULL');
+    (0, _chai.expect)(input).to.be.eql(ruralFull);
+  });
+  it('should return the full data set', () => {
+    const input = (0, _index.ruralRaw)('ISO');
+    (0, _chai.expect)(input).to.be.eql(countries_iso);
+  });
+  it('should return the full data set', () => {
+    const input = (0, _index.ruralRaw)('NAMES');
+    (0, _chai.expect)(input).to.be.eql(countries);
+  });
+  it('should fail gracefully', () => {
+    const input = (0, _index.ruralRaw)('sdcmdilmcd');
     (0, _chai.expect)(input).to.be.false;
   });
 });
@@ -96,5 +142,20 @@ describe('Rural Currency Helper Tests', () => {
   it('should throw an error with an invalid message', () => {
     const invalid = (0, _index.ruralCurrency)('SDFDCSAC');
     (0, _chai.expect)(invalid.message).to.be.a('string');
+  });
+  it('should throw an error with an invalid message', () => {
+    const invalid = (0, _index.ruralCurrency)('');
+    (0, _chai.expect)(invalid).to.be.false;
+  });
+});
+/**
+ * Datasets
+ */
+
+describe('Test that all datasets are exporting', () => {
+  it('Should export all the objects', () => {
+    (0, _chai.expect)(ruralFull).to.be.a('object');
+    (0, _chai.expect)(countries_iso).to.be.a('object');
+    (0, _chai.expect)(countries).to.be.a('object');
   });
 });

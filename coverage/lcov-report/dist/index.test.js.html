@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">77.78% </span>
+        <span class="strong">84.62% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>35/45</span>
+        <span class='fraction'>55/65</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">30% </span>
@@ -37,11 +37,11 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>32/32</span>
+        <span class='fraction'>52/52</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -105,7 +105,44 @@
 60
 61
 62
-63</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -133,6 +170,43 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -205,6 +279,43 @@ describe('Default should return a full list of all countries', () =&gt; {
   });
 });
 /**
+ * Iso
+ */
+&nbsp;
+describe('Iso : a function that returns the iso 2 or 3 dependent on the iso input', () =&gt; {
+  it('shouyld return ISO3 with a ISO2 input', () =&gt; {
+    const input = (0, _index.ruralIso)('US');
+    (0, _chai.expect)(input).to.be.eql('USA');
+  });
+  it('shouyld return ISO2 with a ISO3 input', () =&gt; {
+    const input = (0, _index.ruralIso)('UsA');
+    (0, _chai.expect)(input).to.be.eql('US');
+  });
+  it('should return a console error when a non ISO is passed', () =&gt; {
+    const input = (0, _index.ruralIso)('UsAAA');
+    (0, _chai.expect)(input).to.be.false;
+  });
+});
+/**
+ * Name
+ * Returns the name of the country based on Iso input
+ */
+&nbsp;
+describe('Name : a function that returns the counrties name when passed a valid ISO country code', () =&gt; {
+  it('Should return the countries name when passed valid ISO2', () =&gt; {
+    const input = (0, _index.ruralName)('gb');
+    (0, _chai.expect)(input).to.be.eql('United Kingdom');
+  });
+  it('Should return the countries name when passed valid ISO3', () =&gt; {
+    const input = (0, _index.ruralName)('CaN');
+    (0, _chai.expect)(input).to.be.eql('Canada');
+  });
+  it('Should return false when passed an invalid ISO', () =&gt; {
+    const input = (0, _index.ruralName)('CaNad');
+    (0, _chai.expect)(input).to.be.false;
+  });
+});
+/**
  * Currency Helpers
  */
 &nbsp;
@@ -235,7 +346,7 @@ describe('Rural Currency Helper Tests', () =&gt; {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Feb 12 2019 23:41:29 GMT+0000 (Greenwich Mean Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 15 2019 20:56:11 GMT+0000 (Greenwich Mean Time)
 </div>
 </div>
 <script src="../prettify.js"></script>
