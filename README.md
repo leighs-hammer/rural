@@ -1,6 +1,6 @@
 # rural
 [![Build Status](https://travis-ci.com/leighs-hammer/rural.svg?branch=master)](https://travis-ci.com/leighs-hammer/rural)
-[![Coverage Status](https://coveralls.io/repos/github/leighs-hammer/rural/badge.svg)](https://coveralls.io/github/leighs-hammer/rural)
+[![codecov](https://codecov.io/gh/leighs-hammer/rural/branch/master/graph/badge.svg)](https://codecov.io/gh/leighs-hammer/rural)
 [![Known Vulnerabilities](https://snyk.io/test/github/leighs-hammer/rural/badge.svg?targetFile=package.json)](https://snyk.io/test/github/leighs-hammer/rural?targetFile=package.json)
 ![](https://img.shields.io/twitter/follow/@leighb4rnes.svg?label=follow&style=social)
 
