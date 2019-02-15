@@ -4,5 +4,8 @@ node_js:
   - "9"
   - "10"
   - "11"
+install:
+  - npm run build
+  - npm run test-dist
 after_success:
-  - npm run coveralls
+  - npm run cover
