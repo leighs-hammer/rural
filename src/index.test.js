@@ -126,6 +126,12 @@ describe('RawSet : a function that returns raw rapid access data sets', () => {
 		const input = ruralRaw('sdcmdilmcd')
 		expect(input).to.be.false
 	})
+
+	it('should fail gracefully with a failure', () => {
+		const input = ruralRaw()
+		expect(input).to.be.false
+	})
+
 })
 
 /**
