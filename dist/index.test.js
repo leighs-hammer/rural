@@ -117,6 +117,10 @@ describe('RawSet : a function that returns raw rapid access data sets', () => {
     const input = (0, _index.ruralRaw)('sdcmdilmcd');
     (0, _chai.expect)(input).to.be.false;
   });
+  it('should fail gracefully with a failure', () => {
+    const input = (0, _index.ruralRaw)();
+    (0, _chai.expect)(input).to.be.false;
+  });
 });
 /**
  * Currency Helpers

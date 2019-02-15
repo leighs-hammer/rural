@@ -144,20 +144,16 @@ function rawset(item) {
     switch (upperCode) {
       case 'FULL':
         return ruralFull;
-        break;
 
       case 'ISO':
         return countries_iso;
-        break;
 
       case 'NAMES':
         return countries;
-        break;
 
       default:
         console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
         return false;
-        break;
     }
   } else {
     console.error('Requires an object to be returned, valid options are: "full", "names", "iso"');
