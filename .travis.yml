@@ -5,6 +5,7 @@ node_js:
   - "10"
   - "11"
 scripts: 
+  - npm run build
   - npm run test-dist
 after_success:
   - npm run coveralls
