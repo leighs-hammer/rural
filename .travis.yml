@@ -4,7 +4,7 @@ node_js:
   - "9"
   - "10"
   - "11"
-install:
+scripts:
   - npm run build
   - npm run test-dist
 after_success:
