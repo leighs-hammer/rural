@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V 0.2.5
+1. Security patches
+
+## V 0.2.4
+1. Security patches
+
 ## V 0.2.0
 1. Revise dependencies
 2. Add currency details look up from currency code

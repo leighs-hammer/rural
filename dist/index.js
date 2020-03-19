@@ -9,14 +9,6 @@ exports.ruralName = exports.Name = Name;
 exports.ruralRaw = exports.rawset = rawset;
 exports.ruralCurrency = exports.currencyCode = currencyCode;
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 /**
  * Modules
  */
@@ -24,11 +16,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 /**
  * DataSets
  */
-const countries = require('./datasets/countries.json');
+var countries = require('./datasets/countries.json');
 
-const countries_iso = require('./datasets/countries_iso.json');
+var countries_iso = require('./datasets/countries_iso.json');
 
-const ruralFull = require('./datasets/rural.json');
+var ruralFull = require('./datasets/rural.json');
 /**
  * Rural
  * 
@@ -43,22 +35,22 @@ const ruralFull = require('./datasets/rural.json');
 
 
 function _default() {
-  let code = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'returnAll';
-  let options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  let debug = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  var code = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'returnAll';
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var debug = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
   if (code === 'returnAll') {
     return ruralFull;
   } else {
-    const upperCode = code.toUpperCase();
+    var upperCode = code.toUpperCase();
 
     if (upperCode.length === 2) {
       // fastest
       return ruralFull[upperCode];
     } else if (upperCode.length === 3) {
       // loop
-      const codeIso = Iso(upperCode);
-      return ruralFull[`${codeIso}`];
+      var codeIso = Iso(upperCode);
+      return ruralFull["".concat(codeIso)];
     } else {
       console.error('Country Code to Short! requires either an ISO, AA or AAA code. ');
       return false;
@@ -83,19 +75,14 @@ function Iso(code, options, debug) {
   var upperCode = code.toUpperCase(); // catch by length
 
   if (upperCode.length === 2) {
-    return countries_iso[`${upperCode}`];
+    return countries_iso["".concat(upperCode)];
   } else if (upperCode.length === 3) {
     // a performance costly method
     var sOut = ''; //console.log(Object.entries(countries_iso))
 
-    for (const _ref of Object.entries(countries_iso)) {
-      var _ref2 = _slicedToArray(_ref, 2);
-
-      const key = _ref2[0];
-      const item = _ref2[1];
-
+    for (var [key, item] of Object.entries(countries_iso)) {
       if (item === upperCode) {
-        sOut = `${key}`;
+        sOut = "".concat(key);
       }
     }
 
@@ -121,11 +108,11 @@ function Name(code, options, debug) {
   var upperCode = code.toUpperCase();
 
   if (upperCode.length === 2) {
-    return countries[`${upperCode}`]; // return
+    return countries["".concat(upperCode)]; // return
   } else if (upperCode.length === 3) {
     var lcode = Iso(upperCode, null, null); // return
 
-    return countries[`${lcode}`];
+    return countries["".concat(lcode)];
   } else {
     console.error('A valid ISO Alpha 2 or Alpha 3 code is required to look up country name');
     return false;
@@ -166,19 +153,19 @@ function currencyCode(code) {
     return false;
   }
 
-  const values = Object.values(ruralFull);
-  const foundCountry = values.find(country => {
+  var values = Object.values(ruralFull);
+  var foundCountry = values.find(country => {
     return country.currency === code.toUpperCase();
   });
 
   if (!foundCountry) {
     return {
       error: true,
-      message: `No country could be found with the code : ${code.toUpperCase()}`
+      message: "No country could be found with the code : ".concat(code.toUpperCase())
     };
   }
 
-  const cleanCurrency = {
+  var cleanCurrency = {
     currency: foundCountry.currency,
     currencyPosition: foundCountry.currencyPosition,
     currencyMeta: foundCountry.currencyMeta,
